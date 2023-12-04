@@ -150,9 +150,16 @@ namespace RapidFinalProject
                 }
             }
             //unlock accessible areas
-            foreach(Area accessibleArea in area.AccessibleAreas)
+            if(area.AccessibleAreas != null)
             {
-                accessibleArea.unlocked = true;
+                foreach(Area accessibleArea in area.AccessibleAreas)
+                {
+                    accessibleArea.unlocked = true;
+                }
+            }
+            else
+            {
+                //no accessablie paths - leaf node
             }
 
             LoadArea(area);
