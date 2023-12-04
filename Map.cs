@@ -26,6 +26,7 @@ namespace RapidFinalProject
         {
             Name = name;
             Image = image;
+            AreaList = new List<Area>();
         }
     }
 

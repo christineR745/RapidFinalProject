@@ -14,6 +14,7 @@ namespace RapidFinalProject
     public partial class FormMain : Form
     {
         MapSection currentMap;
+        List<Area> areas = new List<Area>();
 
         //method to position buttons (should only be called onces per map section)
         //had to hard code the button locations because setting them on the designer wasn't working for me
@@ -23,7 +24,7 @@ namespace RapidFinalProject
             {
                 area.Button.Location = new Point(area.X, area.Y);
                 area.Button.FlatStyle = FlatStyle.Flat;
-                area.Button.BackColor = Color.Transparent;
+                area.Button.BackColor = Color.Gold;
                 area.Button.FlatAppearance.MouseDownBackColor = Color.Transparent;
                 area.Button.FlatAppearance.MouseOverBackColor = Color.Transparent;
             }
@@ -68,10 +69,26 @@ namespace RapidFinalProject
             this.BackgroundImageLayout = ImageLayout.Stretch;
 
             //create map objects
-            MapSection map1 = new MapSection("Map 1", new Bitmap(Properties.Resources.mapOutline1));
+            MapSection map1 = new MapSection("Map 1", new Bitmap(Properties.Resources.map1));
             MapSection map2 = new MapSection("Map 2", new Bitmap(Properties.Resources.placeholder));
             MapSection map3 = new MapSection("Map 3", new Bitmap(Properties.Resources.placeholder));
+
+            foreach (var con in this.Controls)
+            {
+                if(con.GetType().ToString() == "RapidFinalProject.RoundButton")
+                {
+                    RoundButton rb = (RoundButton)con;
+                    map1.AreaList.Add(new Area(rb.Text, rb, rb.Location.X, rb.Location.Y));
+                }
+            }
+
+            foreach (Area a in map1.AreaList)
+            {
+                Console.WriteLine(a.Button.Tag);
+            }
+
             //areas within map1
+            /*
             Area area1A = new Area("1-A", btn_1A, 195, 591);
             Area area1B = new Area("1-B", btn_1B, 390, 591);
             Area area2A = new Area("2-A", btn_2A, 205, 498);
@@ -96,6 +113,7 @@ namespace RapidFinalProject
             Area area6C = new Area("6-C", btn_6C, 268, 148);
             Area area6D = new Area("6-D", btn_6D, 495, 166);
             Area area7A = new Area("7-A", btn_7A, 406, 92);
+            
             //create accessible area lists
             //there's probably a better way to do this but I can't figure it out
             area1A.AccessibleAreas = new List<Area> { area2A };
@@ -132,6 +150,8 @@ namespace RapidFinalProject
             //unlock first areas
             area1A.unlocked = true;
             area1B.unlocked = true;
+
+            */
 
             PositionButtons(map1);
             LoadSection(map1);
