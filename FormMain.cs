@@ -14,7 +14,13 @@ namespace RapidFinalProject
     public partial class FormMain : Form
     {
         MapSection currentMap;
-        List<Area> areas = new List<Area>();
+
+        //default colours
+        static Color areaColor = Color.Gold;
+        static Color areaHoverColor = Color.Yellow;
+        static Color areaDoneColor = Color.Green;
+        static Color areaDoneHoverColor = Color.Lime;
+
 
         //method to position buttons (should only be called onces per map section)
         //had to hard code the button locations because setting them on the designer wasn't working for me
@@ -23,10 +29,7 @@ namespace RapidFinalProject
             foreach (Area area in map.AreaList)
             {
                 area.Button.Location = new Point(area.X, area.Y);
-                area.Button.FlatStyle = FlatStyle.Flat;
-                area.Button.BackColor = Color.Gold;
-                area.Button.FlatAppearance.MouseDownBackColor = Color.Transparent;
-                area.Button.FlatAppearance.MouseOverBackColor = Color.Transparent;
+                area.Button.BackColor = areaColor;
             }
         }
 
@@ -70,9 +73,10 @@ namespace RapidFinalProject
 
             //create map objects
             MapSection map1 = new MapSection("Map 1", new Bitmap(Properties.Resources.map1));
-            MapSection map2 = new MapSection("Map 2", new Bitmap(Properties.Resources.placeholder));
-            MapSection map3 = new MapSection("Map 3", new Bitmap(Properties.Resources.placeholder));
+            //MapSection map2 = new MapSection("Map 2", new Bitmap(Properties.Resources.placeholder));
+            //MapSection map3 = new MapSection("Map 3", new Bitmap(Properties.Resources.placeholder));
 
+            //Dynamically adds all the areas to the map's list
             foreach (var con in this.Controls)
             {
                 if(con.GetType().ToString() == "RapidFinalProject.RoundButton")
@@ -82,76 +86,21 @@ namespace RapidFinalProject
                 }
             }
 
+            //populates the accesible list via the tag property
+            List<string> parents;
             foreach (Area a in map1.AreaList)
             {
-                Console.WriteLine(a.Button.Tag);
+                if (a.Button.Tag == null) continue;
+                parents = new List<string>();
+                parents.AddRange(a.Button.Tag.ToString().Split('=')[1].Split('-'));
+                parents.ForEach(p =>
+                    map1.AreaList.FindAll(area => area.Button.Name.Split('_').Last() == p)
+                        .ForEach(x => x.AccessibleAreas.Add(a)));
             }
 
-            //areas within map1
-            /*
-            Area area1A = new Area("1-A", btn_1A, 195, 591);
-            Area area1B = new Area("1-B", btn_1B, 390, 591);
-            Area area2A = new Area("2-A", btn_2A, 205, 498);
-            Area area2B = new Area("2-B", btn_2B, 390, 508);
-            Area area3A = new Area("3-A", btn_3A, 163, 411);
-            Area area3B = new Area("3-B", btn_3B, 227, 379);
-            Area area3C = new Area("3-C", btn_3C, 336, 446);
-            Area area3D = new Area("3-D", btn_3D, 442, 459);
-            Area area4A = new Area("4-A", btn_4A, 57, 335);
-            Area area4B = new Area("4-B", btn_4B, 148, 306);
-            Area area4C = new Area("4-C", btn_4C, 246, 256);
-            Area area4D = new Area("4-D", btn_4D, 355, 335);
-            Area area4E = new Area("4-E", btn_4E, 442, 357);
-            Area area4F = new Area("4-F", btn_4F, 516, 379);
-            Area area5A = new Area("5-A", btn_5A, 81, 177);
-            Area area5B = new Area("5-B", btn_5B, 166, 189);
-            Area area5C = new Area("5-C", btn_5C, 336, 247);
-            Area area5D = new Area("5-D", btn_5D, 392, 218);
-            Area area5E = new Area("5-E", btn_5E, 507, 290);
-            Area area6A = new Area("6-A", btn_6A, 111, 92);
-            Area area6B = new Area("6-B", btn_6B, 219, 92);
-            Area area6C = new Area("6-C", btn_6C, 268, 148);
-            Area area6D = new Area("6-D", btn_6D, 495, 166);
-            Area area7A = new Area("7-A", btn_7A, 406, 92);
-            
-            //create accessible area lists
-            //there's probably a better way to do this but I can't figure it out
-            area1A.AccessibleAreas = new List<Area> { area2A };
-            area1B.AccessibleAreas = new List<Area> { area2B };
-            area2A.AccessibleAreas = new List<Area> { area3A, area3B };
-            area2B.AccessibleAreas = new List<Area> { area3C, area3D };
-            area3A.AccessibleAreas = new List<Area> { area4A, area4B };
-            area3B.AccessibleAreas = new List<Area> { area4C };
-            area3C.AccessibleAreas = new List<Area> { area4D };
-            area3D.AccessibleAreas = new List<Area> { area4E, area4F};
-            area4A.AccessibleAreas = new List<Area> { area5A };
-            area4B.AccessibleAreas = new List<Area> { area5B };
-            area4C.AccessibleAreas = new List<Area> { area6C };
-            area4D.AccessibleAreas = new List<Area> { area5C, area5D };
-            area4E.AccessibleAreas = new List<Area> { area5E };
-            area4F.AccessibleAreas = new List<Area> { area5E };
-            area5A.AccessibleAreas = new List<Area> { area6A };
-            area5B.AccessibleAreas = new List<Area> { area6A, area6B };
-            area5C.AccessibleAreas = new List<Area> { area6C };
-            area5D.AccessibleAreas = new List<Area> { area7A };
-            area5E.AccessibleAreas = new List<Area> { area6D };
-            area6D.AccessibleAreas = new List<Area> { area7A };
-            //create list of areas in map
-            map1.AreaList = new List<Area>() {
-                area1A, area1B, 
-                area2A, area2B, 
-                area3A, area3B, area3C, area3D,
-                area4A, area4B, area4C, area4D, area4E, area4F,
-                area5A, area5B, area5C, area5D, area5E,
-                area6A, area6B, area6C, area6D,
-                area7A
-            };
-            
-            //unlock first areas
-            area1A.unlocked = true;
-            area1B.unlocked = true;
-
-            */
+            //sets the initial areas to unlocked
+            map1.AreaList.Where(x => x.Button.Tag.ToString().Split('=')[1] =="null")
+                .ToList().ForEach(x => x.unlocked = true);
 
             PositionButtons(map1);
             LoadSection(map1);
@@ -161,6 +110,9 @@ namespace RapidFinalProject
         {
             //find area with corresponding button
             Area area = currentMap.AreaList.First(item => item.Button == sender);
+            area.Button.BackColor = areaDoneColor;
+            //in the future this will need to be changed with a win condition
+            area.completed = true;
             //hide buttons
             foreach(Area visibleArea in currentMap.AreaList)
             {
@@ -191,6 +143,21 @@ namespace RapidFinalProject
             btn_Next.Visible = false;
 
             LoadSection(currentMap);
+        }
+
+        private void HoverArea(object sender, EventArgs e)
+        {
+            RoundButton button = (RoundButton)sender;
+            
+            if(currentMap.AreaList.Find(area => area.Button == button).completed) button.BackColor = areaDoneHoverColor;
+            else button.BackColor = areaHoverColor;
+        }
+
+        private void HoverLeave(object sender, EventArgs e)
+        {
+            RoundButton button = (RoundButton)sender;
+            if (currentMap.AreaList.Find(area => area.Button == button).completed) button.BackColor = areaDoneColor;
+            else button.BackColor = areaColor;
         }
     }
 }

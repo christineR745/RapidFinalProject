@@ -36,16 +36,17 @@ namespace RapidFinalProject
         public string AreaName;
         public Bitmap Image = new Bitmap(Properties.Resources.placeholder);
         public bool unlocked = false;
+        public bool completed { get; set; } = false;
 
         //Button info
-        public Button Button;
+        public RoundButton Button;
         public int X;
         public int Y;
 
-        public List<Area> AccessibleAreas;
+        public List<Area> AccessibleAreas = new List<Area>();
         public List<Enemy> Enemies = new List<Enemy>();
 
-        public Area(string name, Button button, int x, int y)
+        public Area(string name, RoundButton button, int x, int y)
         {
             AreaName = name;
             Button = button;

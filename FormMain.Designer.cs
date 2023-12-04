@@ -95,6 +95,8 @@
             this.btn_7A.UseVisualStyleBackColor = false;
             this.btn_7A.Visible = false;
             this.btn_7A.Click += new System.EventHandler(this.areaButton_Click);
+            this.btn_7A.MouseLeave += new System.EventHandler(this.HoverLeave);
+            this.btn_7A.MouseHover += new System.EventHandler(this.HoverArea);
             // 
             // btn_6D
             // 
@@ -111,6 +113,8 @@
             this.btn_6D.UseVisualStyleBackColor = false;
             this.btn_6D.Visible = false;
             this.btn_6D.Click += new System.EventHandler(this.areaButton_Click);
+            this.btn_6D.MouseLeave += new System.EventHandler(this.HoverLeave);
+            this.btn_6D.MouseHover += new System.EventHandler(this.HoverArea);
             // 
             // btn_6C
             // 
@@ -127,6 +131,8 @@
             this.btn_6C.UseVisualStyleBackColor = false;
             this.btn_6C.Visible = false;
             this.btn_6C.Click += new System.EventHandler(this.areaButton_Click);
+            this.btn_6C.MouseLeave += new System.EventHandler(this.HoverLeave);
+            this.btn_6C.MouseHover += new System.EventHandler(this.HoverArea);
             // 
             // btn_6B
             // 
@@ -143,6 +149,8 @@
             this.btn_6B.UseVisualStyleBackColor = false;
             this.btn_6B.Visible = false;
             this.btn_6B.Click += new System.EventHandler(this.areaButton_Click);
+            this.btn_6B.MouseLeave += new System.EventHandler(this.HoverLeave);
+            this.btn_6B.MouseHover += new System.EventHandler(this.HoverArea);
             // 
             // btn_6A
             // 
@@ -159,6 +167,8 @@
             this.btn_6A.UseVisualStyleBackColor = false;
             this.btn_6A.Visible = false;
             this.btn_6A.Click += new System.EventHandler(this.areaButton_Click);
+            this.btn_6A.MouseLeave += new System.EventHandler(this.HoverLeave);
+            this.btn_6A.MouseHover += new System.EventHandler(this.HoverArea);
             // 
             // btn_5E
             // 
@@ -175,6 +185,8 @@
             this.btn_5E.UseVisualStyleBackColor = false;
             this.btn_5E.Visible = false;
             this.btn_5E.Click += new System.EventHandler(this.areaButton_Click);
+            this.btn_5E.MouseLeave += new System.EventHandler(this.HoverLeave);
+            this.btn_5E.MouseHover += new System.EventHandler(this.HoverArea);
             // 
             // btn_5D
             // 
@@ -191,6 +203,8 @@
             this.btn_5D.UseVisualStyleBackColor = false;
             this.btn_5D.Visible = false;
             this.btn_5D.Click += new System.EventHandler(this.areaButton_Click);
+            this.btn_5D.MouseLeave += new System.EventHandler(this.HoverLeave);
+            this.btn_5D.MouseHover += new System.EventHandler(this.HoverArea);
             // 
             // btn_5C
             // 
@@ -207,6 +221,8 @@
             this.btn_5C.UseVisualStyleBackColor = false;
             this.btn_5C.Visible = false;
             this.btn_5C.Click += new System.EventHandler(this.areaButton_Click);
+            this.btn_5C.MouseLeave += new System.EventHandler(this.HoverLeave);
+            this.btn_5C.MouseHover += new System.EventHandler(this.HoverArea);
             // 
             // btn_5B
             // 
@@ -223,6 +239,8 @@
             this.btn_5B.UseVisualStyleBackColor = false;
             this.btn_5B.Visible = false;
             this.btn_5B.Click += new System.EventHandler(this.areaButton_Click);
+            this.btn_5B.MouseLeave += new System.EventHandler(this.HoverLeave);
+            this.btn_5B.MouseHover += new System.EventHandler(this.HoverArea);
             // 
             // btn_5A
             // 
@@ -239,6 +257,8 @@
             this.btn_5A.UseVisualStyleBackColor = false;
             this.btn_5A.Visible = false;
             this.btn_5A.Click += new System.EventHandler(this.areaButton_Click);
+            this.btn_5A.MouseLeave += new System.EventHandler(this.HoverLeave);
+            this.btn_5A.MouseHover += new System.EventHandler(this.HoverArea);
             // 
             // btn_4F
             // 
@@ -255,6 +275,8 @@
             this.btn_4F.UseVisualStyleBackColor = false;
             this.btn_4F.Visible = false;
             this.btn_4F.Click += new System.EventHandler(this.areaButton_Click);
+            this.btn_4F.MouseLeave += new System.EventHandler(this.HoverLeave);
+            this.btn_4F.MouseHover += new System.EventHandler(this.HoverArea);
             // 
             // btn_4E
             // 
@@ -271,6 +293,8 @@
             this.btn_4E.UseVisualStyleBackColor = false;
             this.btn_4E.Visible = false;
             this.btn_4E.Click += new System.EventHandler(this.areaButton_Click);
+            this.btn_4E.MouseLeave += new System.EventHandler(this.HoverLeave);
+            this.btn_4E.MouseHover += new System.EventHandler(this.HoverArea);
             // 
             // btn_4D
             // 
@@ -287,6 +311,8 @@
             this.btn_4D.UseVisualStyleBackColor = false;
             this.btn_4D.Visible = false;
             this.btn_4D.Click += new System.EventHandler(this.areaButton_Click);
+            this.btn_4D.MouseLeave += new System.EventHandler(this.HoverLeave);
+            this.btn_4D.MouseHover += new System.EventHandler(this.HoverArea);
             // 
             // btn_4C
             // 
@@ -303,6 +329,8 @@
             this.btn_4C.UseVisualStyleBackColor = false;
             this.btn_4C.Visible = false;
             this.btn_4C.Click += new System.EventHandler(this.areaButton_Click);
+            this.btn_4C.MouseLeave += new System.EventHandler(this.HoverLeave);
+            this.btn_4C.MouseHover += new System.EventHandler(this.HoverArea);
             // 
             // btn_4B
             // 
@@ -319,6 +347,8 @@
             this.btn_4B.UseVisualStyleBackColor = false;
             this.btn_4B.Visible = false;
             this.btn_4B.Click += new System.EventHandler(this.areaButton_Click);
+            this.btn_4B.MouseLeave += new System.EventHandler(this.HoverLeave);
+            this.btn_4B.MouseHover += new System.EventHandler(this.HoverArea);
             // 
             // btn_4A
             // 
@@ -335,6 +365,8 @@
             this.btn_4A.UseVisualStyleBackColor = false;
             this.btn_4A.Visible = false;
             this.btn_4A.Click += new System.EventHandler(this.areaButton_Click);
+            this.btn_4A.MouseLeave += new System.EventHandler(this.HoverLeave);
+            this.btn_4A.MouseHover += new System.EventHandler(this.HoverArea);
             // 
             // btn_3D
             // 
@@ -351,6 +383,8 @@
             this.btn_3D.UseVisualStyleBackColor = false;
             this.btn_3D.Visible = false;
             this.btn_3D.Click += new System.EventHandler(this.areaButton_Click);
+            this.btn_3D.MouseLeave += new System.EventHandler(this.HoverLeave);
+            this.btn_3D.MouseHover += new System.EventHandler(this.HoverArea);
             // 
             // btn_3C
             // 
@@ -367,6 +401,8 @@
             this.btn_3C.UseVisualStyleBackColor = false;
             this.btn_3C.Visible = false;
             this.btn_3C.Click += new System.EventHandler(this.areaButton_Click);
+            this.btn_3C.MouseLeave += new System.EventHandler(this.HoverLeave);
+            this.btn_3C.MouseHover += new System.EventHandler(this.HoverArea);
             // 
             // btn_3B
             // 
@@ -383,6 +419,8 @@
             this.btn_3B.UseVisualStyleBackColor = false;
             this.btn_3B.Visible = false;
             this.btn_3B.Click += new System.EventHandler(this.areaButton_Click);
+            this.btn_3B.MouseLeave += new System.EventHandler(this.HoverLeave);
+            this.btn_3B.MouseHover += new System.EventHandler(this.HoverArea);
             // 
             // btn_3A
             // 
@@ -399,6 +437,8 @@
             this.btn_3A.UseVisualStyleBackColor = false;
             this.btn_3A.Visible = false;
             this.btn_3A.Click += new System.EventHandler(this.areaButton_Click);
+            this.btn_3A.MouseLeave += new System.EventHandler(this.HoverLeave);
+            this.btn_3A.MouseHover += new System.EventHandler(this.HoverArea);
             // 
             // btn_2B
             // 
@@ -415,6 +455,8 @@
             this.btn_2B.UseVisualStyleBackColor = false;
             this.btn_2B.Visible = false;
             this.btn_2B.Click += new System.EventHandler(this.areaButton_Click);
+            this.btn_2B.MouseLeave += new System.EventHandler(this.HoverLeave);
+            this.btn_2B.MouseHover += new System.EventHandler(this.HoverArea);
             // 
             // btn_2A
             // 
@@ -431,6 +473,8 @@
             this.btn_2A.UseVisualStyleBackColor = false;
             this.btn_2A.Visible = false;
             this.btn_2A.Click += new System.EventHandler(this.areaButton_Click);
+            this.btn_2A.MouseLeave += new System.EventHandler(this.HoverLeave);
+            this.btn_2A.MouseHover += new System.EventHandler(this.HoverArea);
             // 
             // btn_1B
             // 
@@ -447,6 +491,8 @@
             this.btn_1B.UseVisualStyleBackColor = false;
             this.btn_1B.Visible = false;
             this.btn_1B.Click += new System.EventHandler(this.areaButton_Click);
+            this.btn_1B.MouseLeave += new System.EventHandler(this.HoverLeave);
+            this.btn_1B.MouseHover += new System.EventHandler(this.HoverArea);
             // 
             // btn_1A
             // 
@@ -464,6 +510,8 @@
             this.btn_1A.UseVisualStyleBackColor = false;
             this.btn_1A.Visible = false;
             this.btn_1A.Click += new System.EventHandler(this.areaButton_Click);
+            this.btn_1A.MouseLeave += new System.EventHandler(this.HoverLeave);
+            this.btn_1A.MouseHover += new System.EventHandler(this.HoverArea);
             // 
             // FormMain
             // 
@@ -500,6 +548,10 @@
             this.Controls.Add(this.lbl_AreaName);
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(498, 570);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(498, 570);
             this.Name = "FormMain";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
