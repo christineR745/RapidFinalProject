@@ -33,7 +33,7 @@ namespace RapidFinalProject
     public class Area
     {
         public string AreaName;
-        public Bitmap Image = new Bitmap(50,50);
+        public Bitmap Image = new Bitmap(Properties.Resources.placeholder);
         public bool unlocked = false;
 
         //Button info
