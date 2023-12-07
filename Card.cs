@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RapidFinalProject
 {
-    internal class Card
+    public class Card
     {
         public string Name { get; private set; }
         public string Description { get; private set; }
